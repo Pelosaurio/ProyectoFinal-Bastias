@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    <h1 style="color: #1a1a1a;">🌸Programa Mi Mejor Versión🌸</h1>  
+{% endblock titulo %}
+
+{% block contenido %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow p-4 rounded text-center">
+                    <h2 class="card-title mb-4" style="color: #1a1a1a;">¡Únete a nuestra comunidad y comienza tu viaje hacia tu mejor versión!</h2>
+                    <p class="card-text lead mb-4" style="color: #495057;">"Cada pequeño paso te acerca más a la mujer extraordinaria que estás destinada a ser. ¡No esperes más para empezar!"</p>
+                    <a href="{% url 'Comunidad:registrar_usuario' %}" class="btn btn-primary btn-lg">Regístrate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock contenido %}
