@@ -5,7 +5,7 @@ class Psicologa(models.Model):
     fecha_nacimiento = models.DateField(null=True, verbose_name="fecha de nacimiento")
     telefono = models.PositiveIntegerField(unique=True)
     correo = models.CharField(max_length=200)
-    usuario = models.CharField(max_length=200)
+    usuario = models.CharField(max_length=200, unique=True)
     contraseña = models.CharField(max_length=200)
     
     def __str__(self) -> str:
@@ -17,7 +17,7 @@ class Equipo(models.Model):
     telefono = models.PositiveIntegerField(unique=True)
     correo = models.CharField(max_length=200)
     area = models.CharField(max_length=200, verbose_name="Área de Trabajo")
-    usuario = models.CharField(max_length=200)
+    usuario = models.CharField(max_length=200, unique=True)
     contraseña = models.CharField(max_length=200)
     
     def __str__(self) -> str:
@@ -31,7 +31,7 @@ class Usuario(models.Model):
     fecha_nacimiento = models.DateField(null=True, verbose_name="fecha de nacimiento")
     telefono = models.PositiveIntegerField(unique=True)
     correo = models.CharField(max_length=200)
-    usuario = models.CharField(max_length=200)
+    usuario = models.CharField(max_length=200, unique=True)
     contraseña = models.CharField(max_length=200)
     
     def __str__(self) -> str:
