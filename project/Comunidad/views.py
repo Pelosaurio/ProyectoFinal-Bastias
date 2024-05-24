@@ -2,8 +2,14 @@ from django.shortcuts import redirect, render
 from . import forms, models
 
 def home(request):
-    query = models.Comunidad.objects.all()
-    context = {"comunidades": query}
+    psicologas = models.Psicologa.objects.all()
+    equipo = models.Equipo.objects.all()
+    usuarios = models.Usuario.objects.all()
+    context = {
+        "psicologas": psicologas,
+        "equipo": equipo, 
+        "usuarios": usuarios
+    }
     return render(request, "Comunidad/index.html", context)
 
 def registrar_usuario(request):

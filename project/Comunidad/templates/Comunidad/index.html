@@ -20,4 +20,30 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow p-4 rounded text-center">
+                <h2 class="card-title mb-4" style="color: #1a1a1a;">Nuestro Equipo de Trabajo</h2>
+                <ul class="list-group">
+                    {% for psicologa in psicologas %}
+                    <li class="list-group-item">{{ psicologa.nombre }} - Psicóloga</li>
+                    {% endfor %}
+                    {% for miembro in equipo %}
+                    <li class="list-group-item">{{ miembro.nombre }} - {{ miembro.area }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow p-4 rounded text-center">
+                <h2 class="card-title mb-4" style="color: #1a1a1a;">Usuarias Registradas</h2>
+                <ul class="list-group">
+                    {% for usuario in usuarios %}
+                    <li class="list-group-item">{{ usuario.nombre }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock contenido %}
