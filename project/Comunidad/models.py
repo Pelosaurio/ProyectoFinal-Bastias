@@ -23,6 +23,9 @@ class Equipo(models.Model):
     def __str__(self) -> str:
         return f"{self.nombre} - area: {self.area} 😎  - 👥{self.usuario} - 📱{self.telefono} - 📧{self.correo}"
     
+    class Meta: 
+        verbose_name_plural = "Equipo de Trabajo"
+    
 class Usuario(models.Model):
     nombre = models.CharField(max_length=200)
     fecha_nacimiento = models.DateField(null=True, verbose_name="fecha de nacimiento")
@@ -41,3 +44,6 @@ class Comunidad(models.Model):
     
     def __str__(self) -> str:
         return self.nombre
+    
+    class Meta: 
+        verbose_name_plural = "Comunidad"
