@@ -1,16 +1,17 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block titulo %}
+<h2 class="card-title text-center mb-4" style="color: #1a1a1a;">🤗 Únete nuestra Comunidad 🤗</h2>
 {% endblock titulo %}
 
 {% block contenido %}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card shadow p-4 rounded">
+                <div class="card p-4 shadow-sm rounded" style="background-color: #faf3e0;">
                     <form action="" method="post">
                         {% csrf_token %}
-                        <h2 class="card-title text-center mb-4" style="color: #1a1a1a;">Registrar nuevo usuario</h2>
                         <div class="mb-3">
                             <label for="nombre" class="form-label" style="color: #1a1a1a;">Nombre:</label>
                             <input type="text" class="form-control form-control-lg" id="nombre" name="nombre">
@@ -35,9 +36,12 @@
                             <label for="contraseña" class="form-label" style="color: #1a1a1a;">Contraseña:</label>
                             <input type="password" class="form-control form-control-lg" id="contraseña" name="contraseña">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Registrarse</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Regístrate</button>
                     </form>
                 </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <img src="{% static 'core/img/registrarusuario1.webp' %}" class="img-fluid rounded" alt="Imagen derecha">
             </div>
         </div>
     </div>
