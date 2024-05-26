@@ -30,3 +30,10 @@ def servicios_actualizar(request, pk: int):
     else:
         form = forms.CrearServicioForm(instance=query)
     return render(request, "servicios/actualizarservicio.html", context={"form":form})
+
+def servicios_borrar(request, pk: int):
+    query = models.ServiciosCategoria.objects.get(id=pk)
+    if request.method == "POST":
+        query.delete()
+        return redirect("servicios:home")
+    return render(request, "servicios/borrarservicio.html", context={"servicio":query})

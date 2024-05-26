@@ -68,18 +68,25 @@
       </button>
     </div>
   </div>
-  <div class="container mt-4">>
+  <div class="container mt-4">
     <div class="row">
         {% for servicio in servicios %}
         <div class="col-md-6 mb-4">
             <div class="card">
                 <img src="{% static 'core/img/servicios1.webp' %}" class="card-img-top" alt="Imagen del servicio">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: black;">{{ servicio.nombre }}
-                    <br>
-                      <a href="{% url 'servicios:servicios_detalle' servicio.id %}">Más información aquí</a>
-                      <a href="{% url 'servicios:servicios_actualizar' servicio.id %}">Actualizar servicio</a>
-                    </h5>
+                    <h5 class="card-title text-center" style="color: black;">{{ servicio.nombre }}</h5>
+                    <div class="text-center mt-3">
+                        <a href="{% url 'servicios:servicios_detalle' servicio.id %}" class="btn btn-primary me-2" style="background-color: #8e44ad; border-color: #8e44ad; color: #fff;">
+                            Más información aquí
+                        </a>
+                        <a href="{% url 'servicios:servicios_actualizar' servicio.id %}" class="btn btn-warning" style="background-color: #9b59b6; border-color: #9b59b6; color: #fff;">
+                            Actualizar servicio
+                        </a>
+                        <a href="{% url 'servicios:servicios_borrar' servicio.id %}" class="btn btn-warning" style="background-color: #9b59b6; border-color: #9b59b6; color: #fff;">
+                          Dar de baja
+                      </a>
+                    </div>
                 </div>
             </div>
         </div>
