@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+  <h1 style="color: #1a1a1a;">🌸Nuestros Servicios🌸</h1>
+  <br> 
+{% endblock titulo %}
+{% block contenido %}
+    <div class="container mt-4">
+        <ul>
+            <li> Nombre: {{servicio.nombre}} </li>
+            <li> Descripcion: {{servicio.descripcion}}</li>
+        </ul>
+
+
+    </div>
+          <div>
+            <button style="margin-top: 10px; background-color: #f0e6d2; border: none; padding: 10px 20px; border-radius: 5px;">
+                <a href="{% url 'core:home' %}" style="text-decoration: none; color: black;">Volver a Home</a>
+            </button>
+          </div>
+{% endblock contenido %}
