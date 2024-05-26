@@ -27,11 +27,20 @@
                     <a class="nav-link" href="{% url 'Comunidad:home' %}">Comunidad</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:home' %}">Iniciar Sesión</a>
+                {% if user.is_authenticated %}
+                <form action="{% url 'core:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-dark"> Cerrar Sesión </button>
+                </form>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:home' %}">Cerrar Sesión</a>
+                    <a class="nav-link text-bg-info">{{ user.username }}</a>
                 </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'core:login' %}">Iniciar Sesión</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>
