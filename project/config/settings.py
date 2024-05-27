@@ -1,4 +1,5 @@
 from pathlib import Path
+from django.urls import reverse_lazy
 from django.core.management.utils import get_random_secret_key
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -113,3 +114,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = reverse_lazy("core:login")
+LOGIN_REDIRECT = reverse_lazy("core:home")

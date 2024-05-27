@@ -1,4 +1,7 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
+from django.views.generic import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from . import models, forms
 
 def home(request):
@@ -10,30 +13,21 @@ def servicios_detalle(request, pk: int):
     query = models.ServiciosCategoria.objects.get(id=pk)
     return render(request, "servicios/detalleservicio.html", {"servicio": query})
 
-def servicios_crear(request):
-    if request.method == "POST":
-        form = forms.CrearServicioForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("servicios:home")
-    else:
-        form = forms.CrearServicioForm()
-    return render(request, "servicios/crearservicio.html", context={"form":form})
+class ServicioCrear(LoginRequiredMixin, CreateView):
+    model = models.ServiciosCategoria
+    template_name = "servicios/crearservicio.html"
+    form_class = forms.CrearServicioForm
+    success_url = reverse_lazy("servicios:home")
+    
+class ServicioActualizar(LoginRequiredMixin, UpdateView):
+    model = models.ServiciosCategoria
+    template_name = "servicios/actualizarservicio.html"
+    form_class = forms.CrearServicioForm
+    success_url = reverse_lazy("servicios:home")
 
-def servicios_actualizar(request, pk: int):
-    query = models.ServiciosCategoria.objects.get(id=pk)
-    if request.method == "POST":
-        form = forms.CrearServicioForm(request.POST, instance=query)
-        if form.is_valid():
-            form.save()
-            return redirect("servicios:home")
-    else:
-        form = forms.CrearServicioForm(instance=query)
-    return render(request, "servicios/actualizarservicio.html", context={"form":form})
+class ServicioBorrar(LoginRequiredMixin, DeleteView):
+    model = models.ServiciosCategoria
+    template_name = "servicios/borrarservicio.html"
+    success_url = reverse_lazy("servicios:home")
 
-def servicios_borrar(request, pk: int):
-    query = models.ServiciosCategoria.objects.get(id=pk)
-    if request.method == "POST":
-        query.delete()
-        return redirect("servicios:home")
-    return render(request, "servicios/borrarservicio.html", context={"servicio":query})
+
