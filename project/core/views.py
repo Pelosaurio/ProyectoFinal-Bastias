@@ -1,4 +1,5 @@
 from django.contrib.auth.views import LoginView
+from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
@@ -11,6 +12,7 @@ class CustomLoginView(LoginView):
     authentication_form = CustomAuthenticationForm
     template_name = "core/login.html"
 
+@staff_member_required
 def register(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)

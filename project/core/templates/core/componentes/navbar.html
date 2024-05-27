@@ -18,7 +18,7 @@
                     <a class="nav-link" href="{% url 'core:home' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:home' %}">About</a>
+                    <a class="nav-link" href="{% url 'core:home' %}">Somos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'servicios:home' %}">Servicios</a>
@@ -28,6 +28,9 @@
                 </li>
                 <li class="nav-item">
                 {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'core:register' %}">Nuevo Staff</a>
+                </li>
                 <form action="{% url 'core:logout' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-dark"> Cerrar Sesión </button>
@@ -37,9 +40,7 @@
                     <a class="nav-link text-bg-info">{{ user.username }}</a>
                 </li>
                 {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:register' %}">Regístrate</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'core:login' %}">Iniciar Sesión</a>
                 </li>
