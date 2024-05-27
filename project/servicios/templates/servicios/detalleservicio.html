@@ -7,14 +7,30 @@
 {% endblock titulo %}
 {% block contenido %}
     <div class="container mt-4">
-        <ul>
-            <li> Nombre: {{servicio.nombre}} </li>
-            <li> Descripcion: {{servicio.descripcion}}</li>
-            <li> Valor (CLP): {{servicio.valor}}</li>
-        </ul>
-        <div>
-          <button style="margin-top: 20px; background-color: #f0e6d2; border: none; padding: 10px 20px; border-radius: 5px;">
-              <a href="{% url 'servicios:home' %}" style="text-decoration: none; color: black;">Volver a Servicios</a>
-          </button>
-      </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'core/img/servicios1.webp' %}" class="img-fluid rounded" alt="Servicio Imagen">
+            </div>
+            <div class="col-md-6">
+                <div class="card p-4 shadow-sm rounded" style="background-color: #faf3e0;">
+                    <ul class="list-unstyled">
+                        <li style="color: black;">Nombre: {{ servicio.nombre }}</li>
+                        <br>
+                        <li style="color: black;">Descripción: {{ servicio.descripcion }}</li>
+                        <br>
+                        <li style="color: black;">Valor (CLP): {{ servicio.valor }}</li>
+                        <br>
+                        {% if servicio.cantidad %}
+                            <li style="color: black;">Cantidad: {{ servicio.cantidad }}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="text-center mt-3">
+                    <button style="background-color: #f0e6d2; border: none; padding: 10px 20px; border-radius: 5px;">
+                        <a href="{% url 'servicios:home' %}" style="text-decoration: none; color: black;">Volver a Servicios</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock contenido %}
