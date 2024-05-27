@@ -3,7 +3,7 @@ from . import models
 
 class CrearServicioForm(forms.ModelForm):
     class Meta:
-        model = models.ServiciosCategoria 
+        model = models.Servicios
         fields = '__all__'
         widgets = {
             'nombre': forms.TextInput(attrs={

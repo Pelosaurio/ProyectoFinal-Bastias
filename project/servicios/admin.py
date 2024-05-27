@@ -4,8 +4,8 @@ from . import models
 
 admin.site.site_title = "Servicios"
 
-class ServiciosCategoriaAdmin(admin.ModelAdmin):
+class ServiciosAdmin(admin.ModelAdmin):
     list_display = ("nombre", "descripcion")
     list_display_links = ("nombre",)
 
-admin.site.register(models.ServiciosCategoria, ServiciosCategoriaAdmin)
+admin.site.register(models.Servicios, ServiciosAdmin)

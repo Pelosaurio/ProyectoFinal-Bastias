@@ -5,28 +5,28 @@ from django.urls import reverse_lazy
 from . import models, forms
 
 def home(request):
-    consulta_servicios = models.ServiciosCategoria.objects.all()
+    consulta_servicios = models.Servicios.objects.all()
     context = {"servicios": consulta_servicios}
     return render(request, "servicios/index.html", context)
 
 def servicios_detalle(request, pk: int):
-    query = models.ServiciosCategoria.objects.get(id=pk)
+    query = models.Servicios.objects.get(id=pk)
     return render(request, "servicios/detalleservicio.html", {"servicio": query})
 
 class ServicioCrear(LoginRequiredMixin, CreateView):
-    model = models.ServiciosCategoria
+    model = models.Servicios
     template_name = "servicios/crearservicio.html"
     form_class = forms.CrearServicioForm
     success_url = reverse_lazy("servicios:home")
     
 class ServicioActualizar(LoginRequiredMixin, UpdateView):
-    model = models.ServiciosCategoria
+    model = models.Servicios
     template_name = "servicios/actualizarservicio.html"
     form_class = forms.CrearServicioForm
     success_url = reverse_lazy("servicios:home")
 
 class ServicioBorrar(LoginRequiredMixin, DeleteView):
-    model = models.ServiciosCategoria
+    model = models.Servicios
     template_name = "servicios/borrarservicio.html"
     success_url = reverse_lazy("servicios:home")
 
