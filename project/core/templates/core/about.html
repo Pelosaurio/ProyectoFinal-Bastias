@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1 style="color: #1a1a1a;"> Acerca de Nosotros 👀 </h1>
+{% endblock titulo %}
+
+{% block contenido %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'core/img/somos.webp' %}" class="img-fluid rounded" alt="Mi Foto">
+            </div>
+            <div class="col-md-6">
+                <div class="card p-4 shadow-sm rounded" style="background-color: #faf3e0;">
+                    <p style="color: black; text-align: justify;">
+                        Soy Alfredo Bastías, un profesor de Educación Diferencial de 33 años que a principios de 2024 decidio dar un vuelco en su vida y aprender acerca de la programación.
+                        <br>
+                        Desde temprana edad tuve muchas habilidades con el pensamiento lógico matemático, sin embargo por razones de la vida estudie una carrera mas humanista que me entrego una serie de herramientas y habilidades blandas que quiero potenciar con mis habilidades de razonamiento.
+                        <br>
+                        Por eso me encuentro aquí, y actualmente como parte de mi proyecto final de CoderHouse, desarrolle la siguiente página web para mi compañera de vida Fernanda, quien esta emprendiendo en el mundo digital como Psicologa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-right mt-3">
+        <button style="background-color: #f0e6d2; border: none; padding: 10px 20px; border-radius: 5px;">
+            <a href="{% url 'core:home' %}" style="text-decoration: none; color: black;">Volver a Home</a>
+        </button>
+    </div>
+{% endblock contenido %}
