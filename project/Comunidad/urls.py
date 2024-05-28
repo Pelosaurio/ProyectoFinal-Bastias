@@ -5,5 +5,5 @@ app_name = "Comunidad"
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('registrarusuario/', views.registrar_usuario, name='registrar_usuario'),
+    path('registrarusuario/', views.RegistrarUsuario.as_view(), name='registrar_usuario'),
     ]

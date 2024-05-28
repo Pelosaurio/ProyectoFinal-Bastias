@@ -2,37 +2,37 @@
 {% load static %}
 
 {% block titulo %}
-<h2 class="card-title text-center mb-4" style="color: #1a1a1a;">🤗 Bienvenida a nuestra Comunidad 🤗</h2>
+<h2 class="card-title text-center mb-4 text-dark">🤗 Bienvenida a nuestra Comunidad 🤗</h2>
 {% endblock titulo %}
 
 {% block contenido %}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card p-4 shadow-sm rounded" style="background-color: #faf3e0;">
+                <div class="card p-4 shadow-sm rounded bg-light">
                     <form action="" method="post">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="nombre" class="form-label" style="color: #1a1a1a;">Nombre:</label>
+                            <label for="nombre" class="form-label text-dark">Nombre:</label>
                             <input type="text" class="form-control form-control-lg" id="nombre" name="nombre">
                         </div>
                         <div class="mb-3">
-                            <label for="nacimiento" class="form-label" style="color: #1a1a1a;">Fecha de nacimiento:</label>
+                            <label for="nacimiento" class="form-label text-dark">Fecha de nacimiento:</label>
                             <input type="date" class="form-control form-control-lg" id="nacimiento" name="nacimiento">
                         </div>
                         <div class="mb-3">
-                            <label for="telefono" class="form-label" style="color: #1a1a1a;">Teléfono:</label>
+                            <label for="telefono" class="form-label text-dark">Teléfono:</label>
                             <input type="tel" class="form-control form-control-lg" id="telefono" name="telefono">
                         </div>
                         <div class="mb-3">
-                            <label for="correo" class="form-label" style="color: #1a1a1a;">Correo:</label>
+                            <label for="correo" class="form-label text-dark">Correo:</label>
                             <input type="email" class="form-control form-control-lg" id="correo" name="correo">
                         </div>
                         <div class="mb-3">
-                            <label for="usuario" class="form-label" style="color: #1a1a1a;">Usuario:</label>
+                            <label for="usuario" class="form-label text-dark">Usuario:</label>
                             <input type="text" class="form-control form-control-lg" id="usuario" name="usuario">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block"> Enviar </button>
+                        <button type="submit" class="btn btn-success btn-lg btn-block">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -41,9 +41,9 @@
             </div>
         </div>
     </div>
-    <div>
-        <button style="margin-top: 10px; background-color: #f0e6d2; border: none; padding: 10px 20px; border-radius: 5px;">
-            <a href="{% url 'Comunidad:home' %}" style="text-decoration: none; color: black;">Volver a Regístrate</a>
+    <div class="mt-4 text-center">
+        <button class="btn btn-light">
+            <a href="{% url 'Comunidad:home' %}" style="text-decoration: none; color: black;">Volver a Registrarse</a>
         </button>
     </div>
 {% endblock contenido %}
