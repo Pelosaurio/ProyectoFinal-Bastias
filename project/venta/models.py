@@ -10,7 +10,7 @@ class Vendedor(models.Model):
     avatar = models.ImageField(upload_to="avatares", null=True, blank=True)
     
     def __str__(self):
-        return self.usuario
+        return self.usuario.username
     
     class Meta: 
         verbose_name_plural = "Vendedores"
@@ -19,6 +19,7 @@ class Venta(models.Model):
     vendedor = models.ForeignKey(Vendedor, on_delete=models.DO_NOTHING)
     servicio = models.ForeignKey("servicios.Servicios", on_delete=models.DO_NOTHING)
     cantidad = models.PositiveIntegerField()
+    descripcion = models.CharField(max_length=500, null=True, blank=True)
     precio_total = models.PositiveIntegerField(editable=False)
     fecha_venta = models.DateTimeField(default=timezone.now, editable=False)
     
@@ -29,6 +30,7 @@ class Venta(models.Model):
     def clean(self):
         if self.cantidad > self.servicio.cantidad:
             raise ValidationError("Has superado la cantidad disponible ☹")
+        
         
     def save(self, *args, **kwargs):
         self.precio_total = self.servicio.valor * self.cantidad
