@@ -29,7 +29,7 @@ class Equipo(models.Model):
 class Usuario(models.Model):
     nombre = models.CharField(max_length=200)
     fecha_nacimiento = models.DateField(null=True, verbose_name="fecha de nacimiento")
-    telefono = models.PositiveIntegerField(unique=True)
+    telefono = models.IntegerField(unique=True)
     correo = models.CharField(max_length=200)
     usuario = models.CharField(max_length=200, unique=True)
     
