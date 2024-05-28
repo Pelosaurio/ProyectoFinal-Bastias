@@ -17,11 +17,11 @@ class CrearServicioForm(forms.ModelForm):
                 'rows': 10,
                 'maxlength': '500',
             }),
-            'valor': forms.NumberInput(attrs={  
+            'valor': forms.NumberInput(attrs={
                 'class': 'form-control',
                 'style': 'background-color: #faf3e0; color: #000;',
             }),
-            'valor': forms.NumberInput(attrs={  
+            'cantidad': forms.NumberInput(attrs={
                 'class': 'form-control',
                 'style': 'background-color: #faf3e0; color: #000;',
             }),

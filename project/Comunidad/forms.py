@@ -10,4 +10,3 @@ class RegistrarUsuarioForm(forms.ModelForm):
     telefono = forms.NumberInput
     correo = forms.EmailField
     usuario = forms.CharField
-    contraseña = forms.PasswordInput

@@ -32,7 +32,6 @@ class Usuario(models.Model):
     telefono = models.PositiveIntegerField(unique=True)
     correo = models.CharField(max_length=200)
     usuario = models.CharField(max_length=200, unique=True)
-    contraseña = models.CharField(max_length=200)
     
     def __str__(self) -> str:
         return f"🙋‍♀️ {self.usuario} 🟣 {self.nombre} - 📱{self.telefono} - 📧{self.correo}"
