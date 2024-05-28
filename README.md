@@ -6,13 +6,15 @@ Alumno: Alfredo Bastías Lagos
 
 ## Acerca del proyecto
 
-Creacion de una pagina web que permita registrar usuarias y agendar horas terapeuticas con una psicologa
+Creacion de una web para servicios terapéuticos de un emprendimiento de un equipo de psicologas
 
 ## Aplicaciones
 
 Comunidad
 config
 core
+servicios
+venta
 
 ### Modelos
 
@@ -20,15 +22,18 @@ Psicologa
 Equipo
 Usuario
 Comunidad
+Servicios
+Vendedor
+Venta
 
 ## Mejoras futuras
 
-Posibilidades de agendar en un calendario horas terapeuticas disponibles
-Consulta de horarios disponibles
-Hipervínculo y desarrollo de seccion About
-Plataforma de descarga de material gratuito
-Plataforma para acceder a material exclusivo
+Posibilidades que los usuarios de Comunidad puedan agendar en un calendario horas terapeuticas disponibles, como tambien consultar horas disponibles
+Registrar usuario utilizando cuenta google
+Vinculación con calendario google
+Incorporación de area de videos y material gratuito
+Vincular página web con redes sociales
 
 ## Problemas conocidos
 
-Dificultades para programar un calendario interactivo
+
