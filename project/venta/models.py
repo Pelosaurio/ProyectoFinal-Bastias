@@ -34,4 +34,7 @@ class Venta(models.Model):
         
     def save(self, *args, **kwargs):
         self.precio_total = self.servicio.valor * self.cantidad
+        super().save(*args, **kwargs)
         
+    def __str__(self):
+        return f"Nuevo Servicio Agendado #{self.id} - {self.vendedor} - {self.servicio} - {self.cantidad} - {self.descripcion}"

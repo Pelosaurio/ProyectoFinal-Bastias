@@ -8,6 +8,7 @@ class VentaAdmin(admin.ModelAdmin):
         "servicio",
         "cantidad",
         "precio_total",
+        "descripcion",
         "fecha_venta",
     )
     list_display_links = ("servicio",)
