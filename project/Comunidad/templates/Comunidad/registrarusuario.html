@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+<h2 class="card-title text-center mb-4" style="color: #1a1a1a;">🤗 Bienvenida a nuestra Comunidad 🤗</h2>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm rounded" style="background-color: #faf3e0;">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_nombre" class="form-label" style="color: #000;">Nombre</label>
+                        <input type="text" class="form-control form-control-lg" id="id_nombre" name="nombre" style="background-color: #faf3e0; color: #000;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_fecha_nacimiento" class="form-label" style="color: #000;">Fecha de nacimiento</label>
+                        <input type="date" class="form-control form-control-lg" id="id_fecha_nacimiento" name="fecha_nacimiento" style="background-color: #faf3e0; color: #000;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_telefono" class="form-label" style="color: #000;">Teléfono</label>
+                        <input type="tel" class="form-control form-control-lg" id="id_telefono" name="telefono" style="background-color: #faf3e0; color: #000;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_correo" class="form-label" style="color: #000;">Correo</label>
+                        <input type="email" class="form-control form-control-lg" id="id_correo" name="correo" style="background-color: #faf3e0; color: #000;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_usuario" class="form-label" style="color: #000;">Usuario</label>
+                        <input type="text" class="form-control form-control-lg" id="id_usuario" name="usuario" style="background-color: #faf3e0; color: #000;">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'core/img/registrarusuario1.webp' %}" class="img-fluid rounded" alt="Imagen derecha">
+        </div>
+    </div>
+</div>
+<div class="mt-4 text-center">
+    <button class="btn btn-light">
+        <a href="{% url 'Comunidad:home' %}" style="text-decoration: none; color: black;">Volver a Registrarse</a>
+    </button>
+</div>
+{% endblock contenido %}
