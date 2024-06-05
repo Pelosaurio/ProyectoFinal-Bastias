@@ -16,6 +16,12 @@ def home(request):
 
 class RegistrarUsuario(CreateView):
     model = models.Usuario
+<<<<<<< HEAD
     template_name = "comunidad/registrarusuario.html"
     form_class = forms.RegistrarUsuarioForm
     success_url = reverse_lazy("Comunidad:home")
+=======
+    template_name = "comunidad/registrar_usuario.html"
+    form_class = forms.RegistrarUsuarioForm
+    success_url = reverse_lazy("comunidad:home")
+>>>>>>> prueba
